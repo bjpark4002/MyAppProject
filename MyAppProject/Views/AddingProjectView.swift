@@ -11,14 +11,23 @@ import SwiftUI
 
 struct AddingProjectView: View {
     @State var nameInput : String
+    @State var description: String
+    @State var startDate : Date
+    @State var endDate : Date
+    
     
     var body: some View {
         Spacer()
         VStack{
-            Text("Name of your project").padding()
-            
-            TextField("PlaceHolder",text: $nameInput).padding()
-            
+            TextField("Project Name",text: $nameInput).padding()
+            TextField("Description",text: $nameInput).padding()
+
+            DatePicker(selection: $startDate, in: ...Date.now, displayedComponents: .date) {
+                Text("Start Date").padding()
+                        }
+            DatePicker(selection: $startDate, in: ...Date.now, displayedComponents: .date) {
+                Text("End Date").padding()
+                        }
         }.multilineTextAlignment(.center)
         
         Spacer()
@@ -34,6 +43,6 @@ struct AddingProjectView: View {
 
 struct AddingProjectView_Previews: PreviewProvider {
     static var previews: some View {
-        AddingProjectView(nameInput:"")
+        AddingProjectView(nameInput:"", description: "", startDate: Date(), endDate: Date() )
     }
 }

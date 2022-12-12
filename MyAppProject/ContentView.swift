@@ -17,7 +17,7 @@ struct ContentView: View {
 
                     NavigationLink(
                                /// 2
-                        destination:AddingProjectView(nameInput: ""),
+                        destination:AddingProjectView(nameInput:"", description: "", startDate: Date(), endDate: Date() ),
                                /// 3
                                label: {
 
