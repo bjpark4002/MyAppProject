@@ -20,7 +20,7 @@ struct AddingProjectView: View {
         Spacer()
         VStack{
             TextField("Project Name",text: $nameInput).padding()
-            TextField("Description",text: $nameInput).padding()
+            TextField("Description",text: $description).padding()
 
             DatePicker(selection: $startDate, in: ...Date.now, displayedComponents: .date) {
                 Text("Start Date").padding()
