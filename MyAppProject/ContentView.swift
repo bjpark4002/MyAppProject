@@ -8,9 +8,38 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var isAddingProjectView : Bool = false
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+
+        NavigationView{
+            VStack{
+                Text("Start the app by adding project")
+
+                    NavigationLink(
+                               /// 2
+                        destination:AddingProjectView(nameInput: ""),
+                               /// 3
+                               label: {
+
+                                   Text("ADD").padding()
+                               })
+            }
+        }
+        
+        //if there is project residing in db, load Home view
+        //else
+        // show
+        //
+        
+        
+        
+//        NameInputView()
+        
+        
+        //NameInputView ->
+        //ProjectStartView ->
+        //AddingProjectView ->
+        //HomeView
     }
 }
 
