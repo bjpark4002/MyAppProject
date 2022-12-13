@@ -11,18 +11,19 @@ struct ContentView: View {
     @State var isAddingProjectView : Bool = false
     var body: some View {
 
-        NavigationView{
+        
+        if isAddingProjectView == true{
+            AddingProjectView(nameInput:"", description: "", startDate: Date(), endDate: Date(), notes:"" )
+        }else{
+            
             VStack{
                 Text("Start the app by adding project")
-
-                    NavigationLink(
-                               /// 2
-                        destination:AddingProjectView(nameInput:"", description: "", startDate: Date(), endDate: Date() ),
-                               /// 3
-                               label: {
-
-                                   Text("ADD").padding()
-                               })
+                Button {
+                    isAddingProjectView = true
+                } label: {
+                    Text("ADD").padding()
+                }
+ 
             }
         }
         

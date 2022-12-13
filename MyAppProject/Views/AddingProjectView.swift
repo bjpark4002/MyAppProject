@@ -10,39 +10,64 @@
 import SwiftUI
 
 struct AddingProjectView: View {
-    @State var nameInput : String
-    @State var description: String
-    @State var startDate : Date
-    @State var endDate : Date
+    @State var nameInput : String = ""
+    @State var description: String = ""
+    @State var startDate : Date = Date.now
+    @State var endDate : Date = Date.now
+    @State var notes : String = ""
+    @State var completeCreate : Bool = false
     
+    @State var isHomeView : Bool = false
     
     var body: some View {
-        Spacer()
-        VStack{
-            TextField("Project Name",text: $nameInput).padding()
-            TextField("Description",text: $description).padding()
+        
+        
+        if isHomeView == true{
+            HomeView()
+        }else{
+            VStack{
+                Spacer()
 
-            DatePicker(selection: $startDate, in: ...Date.now, displayedComponents: .date) {
-                Text("Start Date").padding()
-                        }
-            DatePicker(selection: $startDate, in: ...Date.now, displayedComponents: .date) {
-                Text("End Date").padding()
-                        }
-        }.multilineTextAlignment(.center)
-        
-        Spacer()
-        
-        Button(action: {
-           //store in the userDefault
-        })
-        {
-            Text("Add").padding()
+                TextField("Project Name",text: $nameInput).padding()
+                TextField("Description",text: $description).padding()
+
+                DatePicker(selection: $startDate, in: ...Date.now, displayedComponents: .date) {
+                    Text("Start Date").padding()
+                            }
+                DatePicker(selection: $startDate, in: ...Date.now, displayedComponents: .date) {
+                    Text("End Date").padding()
+                            }
+                TextField("Notes",text: $notes).padding()
+
+                
+                Spacer()
+                HStack{
+                    Button {
+                        // store data logic happens
+                        isHomeView = true
+                    } label: {
+                        Text("Add").padding()
+                    }
+
+                    
+                    Button {
+                        isHomeView = true
+                    } label: {
+                        Text("Skip").padding()
+                    }
+
+                }
+            }.multilineTextAlignment(.center)
+            
         }
+       
+        
     }
 }
 
 struct AddingProjectView_Previews: PreviewProvider {
     static var previews: some View {
-        AddingProjectView(nameInput:"", description: "", startDate: Date(), endDate: Date() )
+        AddingProjectView(nameInput:"", description: "", startDate: Date(), endDate: Date() , notes: ""
+        )
     }
 }
