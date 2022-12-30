@@ -9,7 +9,7 @@ import SwiftUI
 
 struct InProgressProjectView: View {
     var body: some View {
-        Text("In Progress Tasks")
+        Text(" # tasks in Progress")
     }
 }
 

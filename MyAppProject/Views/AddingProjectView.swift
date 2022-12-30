@@ -8,6 +8,8 @@
 
 // 프로젝트를 추가할 수 있는 화면
 import SwiftUI
+import PhotosUI
+
 
 struct AddingProjectView: View {
     @State var nameInput : String = ""
@@ -19,6 +21,9 @@ struct AddingProjectView: View {
     
     @State var isHomeView : Bool = false
     
+    @State private var photosPickerPresented = false
+    @State private var selectedItem : PhotosPickerItem?
+    @State private var selectedPhotoData: Data?
     var body: some View {
         
         
@@ -26,19 +31,43 @@ struct AddingProjectView: View {
             HomeView()
         }else{
             VStack{
+                if let selectedPhotoData, let image = UIImage(data: selectedPhotoData){
+                    Image(uiImage: image).resizable().scaledToFill().clipped()
+                }
+    
+                PhotosPicker(selection: $selectedItem, matching: .any(of: [.images, .not(.livePhotos)])){
+                    Label("Select a photo",systemImage: "photo")
+                }
+                .onChange(of: selectedItem) { newValue in
+                     
+                }
+                //                let image = UIImage(named: "myImage")!
+                //                let fileName = "myImage.jpg"
+                //
+                //                if saveImage(image: image, fileName: fileName) {
+                //                    print("Image saved successfully")
+                //                } else {
+                //                    print("Error saving image")
+                //                }
+                //
+                //                if let image = loadImage(fileName: fileName) {
+                //                    print("Image loaded successfully")
+                //                } else {
+                //                    print("Error loading image")
+                //                }
                 Spacer()
-
+                
                 TextField("Project Name",text: $nameInput).padding()
                 TextField("Description",text: $description).padding()
-
+                
                 DatePicker(selection: $startDate, in: ...Date.now, displayedComponents: .date) {
                     Text("Start Date").padding()
-                            }
+                }
                 DatePicker(selection: $startDate, in: ...Date.now, displayedComponents: .date) {
                     Text("End Date").padding()
-                            }
+                }
                 TextField("Notes",text: $notes).padding()
-
+                
                 
                 Spacer()
                 HStack{
@@ -48,19 +77,19 @@ struct AddingProjectView: View {
                     } label: {
                         Text("Add").padding()
                     }
-
+                    
                     
                     Button {
                         isHomeView = true
                     } label: {
                         Text("Skip").padding()
                     }
-
+                    
                 }
             }.multilineTextAlignment(.center)
             
         }
-       
+        
         
     }
 }

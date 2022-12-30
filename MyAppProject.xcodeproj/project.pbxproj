@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E575380295E9DA90053ABF8 /* FileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E57537F295E9DA90053ABF8 /* FileModel.swift */; };
 		3E84A2562948678800596FE6 /* CompletedProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E84A2552948678800596FE6 /* CompletedProjectView.swift */; };
 		3E84A2582948679600596FE6 /* InProgressProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E84A2572948679600596FE6 /* InProgressProjectView.swift */; };
 		3ED7C02C28435F54000B9098 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED7C02B28435F54000B9098 /* HomeView.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E57537F295E9DA90053ABF8 /* FileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileModel.swift; sourceTree = "<group>"; };
 		3E84A2552948678800596FE6 /* CompletedProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedProjectView.swift; sourceTree = "<group>"; };
 		3E84A2572948679600596FE6 /* InProgressProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProgressProjectView.swift; sourceTree = "<group>"; };
 		3ED7C02B28435F54000B9098 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				3ED7C0332843607D000B9098 /* UserModel.swift */,
 				3ED7C03528436088000B9098 /* ProjectModel.swift */,
 				3ED7C03728436097000B9098 /* ImageModel.swift */,
+				3E57537F295E9DA90053ABF8 /* FileModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				3ED7C03828436097000B9098 /* ImageModel.swift in Sources */,
 				DF862E7628425C56008670D1 /* MyAppProjectApp.swift in Sources */,
 				3E84A2582948679600596FE6 /* InProgressProjectView.swift in Sources */,
+				3E575380295E9DA90053ABF8 /* FileModel.swift in Sources */,
 				3ED7C03C284360F2000B9098 /* StatusEnum.swift in Sources */,
 				3ED7C03628436088000B9098 /* ProjectModel.swift in Sources */,
 				3ED7C0302843602A000B9098 /* AddingProjectView.swift in Sources */,
@@ -490,6 +494,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -518,6 +523,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
