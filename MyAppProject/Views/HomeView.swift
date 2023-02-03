@@ -9,30 +9,35 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var selectedTabView = 2 //
-
+    @State private var selectedTabView = 1 //
+    @State private var addingProjectView = false
     var body: some View {
-        HStack{
-            Spacer()
-            Button {
-                
-            } label: {
-                Text("Add New Task")
-            }
+        if addingProjectView == true{
+            AddingProjectView()
         }
-
-        TabView(selection: $selectedTabView){
+        else{
+            HStack{
+                Spacer()
+                Button {
+                    addingProjectView.toggle()
+                } label: {
+                    Text("Add New Task")
+                }
+            }
             
-            InProgressProjectView().tabItem {
-                Image(systemName: "1.square.fill")
-                Text("In Progress")
-            }.tag(1)
-            
-            CompletedProjectView().tabItem {
-                Image(systemName: "2.square.fill")
-                Text("Completed")
-            }.tag(2)
-            
+            TabView(selection: $selectedTabView){
+                
+                InProgressProjectView().tabItem {
+                    Image(systemName: "1.square.fill")
+                    Text("In Progress")
+                }.tag(1)
+                
+                CompletedProjectView().tabItem {
+                    Image(systemName: "2.square.fill")
+                    Text("Completed")
+                }.tag(2)
+                
+            }
         }
     }
 }

@@ -9,7 +9,19 @@ import SwiftUI
 
 struct InProgressProjectView: View {
     var body: some View {
-        Text(" # tasks in Progress")
+        VStack{
+            Spacer()
+            Text(" Hi Name!")
+            Text(" # InProgress Tasks")
+            Spacer()
+            ScrollView(){
+                ProjectSummaryView()
+                ProjectSummaryView()
+                ProjectSummaryView()
+                ProjectSummaryView()
+            }
+        }
+
     }
 }
 

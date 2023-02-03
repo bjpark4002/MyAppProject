@@ -9,7 +9,19 @@ import SwiftUI
 
 struct CompletedProjectView: View {
     var body: some View {
-        Text("Completed Tasks")
+        VStack{
+            Spacer()
+            Text(" Hi Name!")
+            Text(" # Completed Tasks")
+            Spacer()
+            ScrollView(){
+                ProjectSummaryView()
+                ProjectSummaryView()
+                ProjectSummaryView()
+                ProjectSummaryView()
+                
+            }
+        }
     }
 }
 
